@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: braintwister/gcc-8
+  commands:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+- name: tests
+  image: debian:stretch
+  commands:
+  - build/bin/unit_tests
