@@ -3,13 +3,13 @@ name: CI
 
 steps:
 - name: build
-  image: gcc:8
+  image: pandry/cppbuildimage
   commands:
   - mkdir build
   - cd build
   - cmake ..
   - make
 - name: tests
-  image: debian:stretch
+  image: alpine
   commands:
   - build/bin/unit_tests
