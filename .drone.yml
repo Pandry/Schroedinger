@@ -10,6 +10,6 @@ steps:
   - cmake ..
   - make
 - name: tests
-  image: alpine
+  image: pandry/cppbuildimage
   commands:
   - build/bin/unit_tests
