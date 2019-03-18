@@ -9,6 +9,7 @@ steps:
   - cd build
   - cmake ..
   - make
+  
 - name: tests
   image: pandry/cppbuildimage
   commands:
