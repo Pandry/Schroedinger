@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: CI
 
 steps:
 - name: build
