@@ -40,21 +40,21 @@ TEST(Basis, Dimension_1_continuous_mesh_nbox)
 TEST(Basis, Dimension_1_continuous_start_end_mesh)
 {
     unsigned int nbox = 1000;
-    double start = 0;
-    double end = 100;
-    double mesh = 0.1;
+    float64 start = 0;
+    float64 end = 100;
+    float64 mesh = 0.1;
     int dimension = 1;
 
     BasisManager::Builder b = BasisManager::Builder();
     Base base = b.addContinuous(start, end, mesh).build(dimension);
 
     ContinuousBase firstContinuousBase = base.getContinuous().at(0);
-    std::vector<double> baseCoords = firstContinuousBase.getCoords();
+    std::vector<float64> baseCoords = firstContinuousBase.getCoords();
 
-    std::vector<double> groundTruthCoords; 
+    std::vector<float64> groundTruthCoords; 
     groundTruthCoords.reserve(1001);
 
-    double value = 0.0;
+    float64 value = 0.0;
     for (int i = 0; i <= nbox; i++)  {
         groundTruthCoords.push_back(value);
         value+=mesh;
@@ -67,21 +67,21 @@ TEST(Basis, Dimension_1_continuous_start_end_mesh)
 TEST(Basis, Dimension_1_continuous_start_end_nbox)
 {
     unsigned int nbox = 1000;
-    double start = 0;
-    double end = 100;
-    double mesh = 0.1;
+    float64 start = 0;
+    float64 end = 100;
+    float64 mesh = 0.1;
     int dimension = 1;
 
     BasisManager::Builder b = BasisManager::Builder();
     Base base = b.addContinuous(start, end, nbox).build(dimension);
 
     ContinuousBase firstContinuousBase = base.getContinuous().at(0);
-    std::vector<double> baseCoords = firstContinuousBase.getCoords();
+    std::vector<float64> baseCoords = firstContinuousBase.getCoords();
 
-    std::vector<double> groundTruthCoords; 
+    std::vector<float64> groundTruthCoords; 
     groundTruthCoords.reserve(1001);
 
-    double value = 0.0;
+    float64 value = 0.0;
     for (int i = 0; i <= nbox; i++)  {
         groundTruthCoords.push_back(value);
         value+=mesh;
