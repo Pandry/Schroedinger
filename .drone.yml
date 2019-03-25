@@ -5,6 +5,7 @@ steps:
 - name: build
   image: pandry/minideb-cpp
   commands:
+  - install_packages gcc g++ cmake
   - mkdir build && cd build
   - cmake ..
   - make
