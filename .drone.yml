@@ -3,14 +3,13 @@ name: CI
 
 steps:
 - name: build
-  image: pandry/cppbuildimage
+  image: pandry/minideb-cpp
   commands:
-  - mkdir build
-  - cd build
+  - mkdir build && cd build
   - cmake ..
   - make
   
 - name: tests
-  image: pandry/cppbuildimage
+  image: bitnami/minideb
   commands:
   - build/bin/unit_tests
