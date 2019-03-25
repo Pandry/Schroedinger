@@ -5,6 +5,7 @@ steps:
 - name: build
   image: pandry/minideb-cpp
   commands:
+  - echo "deb http://ftp.us.debian.org/debian testing main contrib non-free" >> /etc/apt/sources.list
   - install_packages gcc g++ cmake
   - mkdir build && cd build
   - cmake ..
