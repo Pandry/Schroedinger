@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: pandry/cppbuildimage
+      - image: pandry/minideb-cpp
     steps:
       - checkout
       - run:
